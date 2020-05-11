@@ -1,6 +1,20 @@
 ﻿CREATE PROCEDURE [dbo].[spCitizen_Insert]
-	@param1 int = 0,
-	@param2 int
+	@CitizenName nvarchar(50),
+	@Age int,
+	@HairLength decimal(18,0),
+	@Height decimal(18,0),
+	@LeaderSince int,
+	@Tax decimal(18,0),
+	@TribeId int,
+	@Id int output
+
 AS
-	SELECT @param1, @param2
-RETURN 0
+
+begin
+	SET nocount on;
+
+	INSERT INTO dbo.[Citizen](CitizenName, Age, HairLength, Height, LeaderSince, Tax, TribeId)
+	VALUES(@CitizenName, @Age, @HairLength, @Height, @LeaderSince, @Tax, @TribeId);
+
+	SET @Id = SCOPE_IDENTITY();
+end
