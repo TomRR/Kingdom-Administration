@@ -3,7 +3,7 @@
 AS
 begin
 	SET nocount on;
-	SELECT [Id], [Name], [ExistSince], [LeaderID]
+	SELECT [Id], [TribeName], [ExistSince]
 	FROM dbo.Tribe;
 
 end
