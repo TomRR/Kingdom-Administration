@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace DataLibrary.Data
 {
-    class TribeData : ITribeData
+    class WeaponData : IWeaponData
     {
         private readonly IDataAccess _dataAccess;
         private readonly ConnectionStringData _connectionString;
 
-        public TribeData(IDataAccess dataAccess, ConnectionStringData connectionString)
+        public WeaponData(IDataAccess dataAccess, ConnectionStringData connectionString)
         {
             _dataAccess = dataAccess;
             _connectionString = connectionString;
         }
 
-        public Task<List<TribeModel>> GetTribe()
+        public Task<List<WeaponModel>> GetWeapon()
         {
-            return _dataAccess.LoadData<TribeModel, dynamic>("dbo.spTribe_All",
+            return _dataAccess.LoadData<WeaponModel, dynamic>("dbo.spWeapon_All",
                                                             new { },
                                                             _connectionString.SqlConnectionName);
         }
