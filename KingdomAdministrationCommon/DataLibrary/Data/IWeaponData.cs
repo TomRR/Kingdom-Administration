@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary.Data
 {
-    interface IWeaponData
+    public interface IWeaponData
     {
         Task<List<WeaponModel>> GetWeapon();
     }

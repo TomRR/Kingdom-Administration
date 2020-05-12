@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary.Data
 {
-    interface ITribeData
+    public interface ITribeData
     {
         Task<List<TribeModel>> GetTribe();
     }

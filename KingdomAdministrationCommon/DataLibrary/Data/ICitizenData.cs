@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary.Data
 {
-    interface ICitizenData
+    public interface ICitizenData
     {
         Task<int> CreateCitizen(CitizenModel citizen);
         Task<int> DeleteCitizen(int orderId);

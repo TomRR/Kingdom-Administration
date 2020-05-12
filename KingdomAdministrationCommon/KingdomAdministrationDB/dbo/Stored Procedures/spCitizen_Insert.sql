@@ -13,7 +13,7 @@ AS
 begin
 	SET nocount on;
 
-	INSERT INTO dbo.[Citizen](CitizenName, Age, HairLength, Height, LeaderSince, Tax, TribeId)
+	INSERT INTO dbo.[Citizen](CitizenName, Age, HairLength, LeaderSince, Tax, TribeId)
 	VALUES(@CitizenName, @Age, @HairLength, @Height, @LeaderSince, @Tax, @TribeId);
 
 	SET @Id = SCOPE_IDENTITY();

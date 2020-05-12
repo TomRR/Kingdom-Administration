@@ -5,7 +5,7 @@ AS
 begin
 	set nocount on;
 
-	select [Id], [CitizenName], [Age], [HairLength], [Height], [LeaderSince], [Tax], [TribeId]
+	select [Id], [CitizenName], [Age], [HairLength],  [LeaderSince], [Tax], [TribeId]
 	from dbo.[Citizen] 
 	where Id = @Id;
 end

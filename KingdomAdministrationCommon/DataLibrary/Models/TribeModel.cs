@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataLibrary.Models
 {
-    class TribeModel
+    public class TribeModel
     {
         public int Id { get; set; }
         public string TribeName { get; set; }

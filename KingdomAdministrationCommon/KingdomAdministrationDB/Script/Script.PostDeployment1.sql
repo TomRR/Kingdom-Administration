@@ -11,8 +11,12 @@ Post-Deployment Script Template
 */
 if not exists (select * from dbo.Citizen)
 begin
-    insert into dbo.Food([Id], [CitizenName], [Age], [HairLength], [Height], [LeaderSince], [Tax], [TribeId])
-    values ('Cheeseburger Meal', 'A cheeseburger, fries and a drink', 7.95),
-           ('Chili Dog Meal', 'Two Chili Dogs, fries and a drink', 5.95),
-           ('Vegan Meal', 'A large Tofu Burger, fries and a drink', 3.95)
+    insert into dbo.Citizen([CitizenName], [Age], [HairLength], [LeaderSince],[Tax], [TribeId])
+    values ('Gimli', 140, null, 25, null, 1),
+           ('Zwingli', 70, null, null, null, 1),
+           ('Gumli', 163, null, null, null, 2),
+           ('Elidyr', 318, 53.34, null, null, 3),
+           ('Lefyr', 214, 84, 12, null, 3),
+           ('Vulas', 96, 23, null, null, 3),
+           ('Malon', 592, 145, 104, null, 4)
 end

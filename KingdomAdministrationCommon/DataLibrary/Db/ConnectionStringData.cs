@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataLibrary.Db
 {
-    class ConnectionStringData
+    public class ConnectionStringData
     {
         public string SqlConnectionName { get; set; } = "Default";
     }

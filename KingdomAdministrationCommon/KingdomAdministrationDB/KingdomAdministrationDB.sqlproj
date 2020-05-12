@@ -78,5 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script\Script.PostDeployment1.sql" />
+    <None Include="Script\Script.PostDeployment2.sql" />
+    <None Include="Script\Script.WeaponPostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="KingdomAdministrationDB.publish.xml" />
   </ItemGroup>
 </Project>
