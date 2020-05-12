@@ -10,6 +10,7 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 if not exists (select * from dbo.Weapon)
+if not exists (select * from dbo.Citizen)
 begin
     insert into dbo.Weapon([Typ], [MagicalValue], [CitizenId])
     values ('Axe', 12, 1),
@@ -17,4 +18,13 @@ begin
            ('Axe', 17, 2),
            ('Wand', 45, 3),
            ('War Hammer', 15, 3)
+
+    insert into dbo.Citizen([CitizenName], [Age], [HairLength], [LeaderSince],[Tax], [TribeId])
+    values ('Gimli', 140, null, 25, null, 1),
+           ('Zwingli', 70, null, null, null, 1),
+           ('Gumli', 163, null, null, null, 2),
+           ('Elidyr', 318, 53.34, null, null, 3),
+           ('Lefyr', 214, 84, 12, null, 3),
+           ('Vulas', 96, 23, null, null, 3),
+           ('Malon', 592, 145, 104, null, 4)
 end

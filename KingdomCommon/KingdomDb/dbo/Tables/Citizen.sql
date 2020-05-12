@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [dbo].[Citizen]
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [CitizenName] NVARCHAR(50) NULL, 
+    [Name] VARCHAR(50) NULL, 
     [Age] INT NULL, 
-    [HairLength] DECIMAL NULL,
+    [HairLength] DECIMAL NULL, 
     [LeaderSince] INT NULL, 
-    [Tax] DECIMAL NULL, 
-    [TribeId] INT NULL
+    [Tax] MONEY NULL, 
+    [TribeId] INT NULL, 
 )

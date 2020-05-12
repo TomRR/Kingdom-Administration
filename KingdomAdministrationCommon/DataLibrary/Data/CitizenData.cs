@@ -37,33 +37,33 @@ namespace DataLibrary.Data
             return p.Get<int>("Id");
         }
 
-        public Task<int> UpdateCitizenName(int orderId, string orderName)
+        public Task<int> UpdateCitizenName(int citizenId, string citizenName)
         {
             return _dataAccess.SaveData("dbo.spCitizen_UpdateName",
                                         new
                                         {
-                                            Id = orderId,
-                                            OrderName = orderName
+                                            Id = citizenId,
+                                            CitizenName = citizenName
                                         },
                                         _connectionString.SqlConnectionName);
         }
 
-        public Task<int> DeleteCitizen(int orderId)
+        public Task<int> DeleteCitizen(int citizenId)
         {
             return _dataAccess.SaveData("dbo.spCitizen_Delete",
                                         new
                                         {
-                                            Id = orderId
+                                            Id = citizenId
                                         },
                                         _connectionString.SqlConnectionName);
         }
 
-        public async Task<CitizenModel> GetCitizenById(int orderId)
+        public async Task<CitizenModel> GetCitizenById(int citizenId)
         {
             var recs = await _dataAccess.LoadData<CitizenModel, dynamic>("dbo.spCitizen_GetById",
                                                                        new
                                                                        {
-                                                                           Id = orderId
+                                                                           Id = citizenId
                                                                        },
                                                                        _connectionString.SqlConnectionName);
             return recs.FirstOrDefault();

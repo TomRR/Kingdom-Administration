@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>KingdomAdministrationDB</Name>
+    <Name>KingdomDb</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{45db49bf-7249-4440-8e6b-e61680caf449}</ProjectGuid>
+    <ProjectGuid>{c9d51c06-51a4-4e12-8a50-0f3ec533946a}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>KingdomAdministrationDB</RootNamespace>
-    <AssemblyName>KingdomAdministrationDB</AssemblyName>
+    <RootNamespace>KingdomDb</RootNamespace>
+    <AssemblyName>KingdomDb</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -57,29 +57,31 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="dbo" />
-    <Folder Include="Script" />
-    <Folder Include="dbo\Stored Procedures" />
     <Folder Include="dbo\Tables" />
+    <Folder Include="Scripts" />
+    <Folder Include="dbo\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Tribe.sql" />
     <Build Include="dbo\Tables\Weapon.sql" />
     <Build Include="dbo\Tables\Citizen.sql" />
-    <Build Include="dbo\Stored Procedures\spTribe_All.sql" />
-    <Build Include="dbo\Stored Procedures\spCitizen_Delete.sql" />
-    <Build Include="dbo\Stored Procedures\spWeapon_Delete.sql" />
-    <Build Include="dbo\Stored Procedures\spCitizen_Insert.sql" />
     <Build Include="dbo\Stored Procedures\spWeapon_All.sql" />
-    <Build Include="dbo\Stored Procedures\spCitizen_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\spWeapon_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\spWeapon_UpdateMagicalValue.sql" />
+    <Build Include="dbo\Stored Procedures\spWeapon_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spCitizen_All.sql" />
+    <Build Include="dbo\Stored Procedures\spCitizen_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\spCitizen_Insert.sql" />
     <Build Include="dbo\Stored Procedures\spCitizen_UpdateName.sql" />
+    <Build Include="dbo\Tables\Tribe.sql" />
+    <Build Include="dbo\Stored Procedures\spTribe_All.sql" />
+    <Build Include="dbo\Stored Procedures\spTribe_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\spTribe_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spTribe_UpdateName.sql" />
   </ItemGroup>
   <ItemGroup>
-    <RefactorLog Include="KingdomAdministrationDB.refactorlog" />
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Script\Script.PostDeployment1.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="KingdomAdministrationDB.publish.xml" />
+    <RefactorLog Include="KingdomDb.refactorlog" />
   </ItemGroup>
 </Project>
