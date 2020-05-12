@@ -9,3 +9,10 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+if not exists (select * from dbo.Citizen)
+begin
+    insert into dbo.Food([Id], [CitizenName], [Age], [HairLength], [Height], [LeaderSince], [Tax], [TribeId])
+    values ('Cheeseburger Meal', 'A cheeseburger, fries and a drink', 7.95),
+           ('Chili Dog Meal', 'Two Chili Dogs, fries and a drink', 5.95),
+           ('Vegan Meal', 'A large Tofu Burger, fries and a drink', 3.95)
+end

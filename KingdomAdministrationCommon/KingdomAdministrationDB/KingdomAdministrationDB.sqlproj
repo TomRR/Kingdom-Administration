@@ -56,5 +56,27 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo" />
+    <Folder Include="Script" />
+    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="dbo\Tables" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Tribe.sql" />
+    <Build Include="dbo\Tables\Weapon.sql" />
+    <Build Include="dbo\Tables\Citizen.sql" />
+    <Build Include="dbo\Stored Procedures\spTribe_All.sql" />
+    <Build Include="dbo\Stored Procedures\spCitizen_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\spWeapon_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\spCitizen_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spWeapon_All.sql" />
+    <Build Include="dbo\Stored Procedures\spCitizen_GetById.sql" />
+    <Build Include="dbo\Stored Procedures\spCitizen_UpdateName.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="KingdomAdministrationDB.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script\Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>
