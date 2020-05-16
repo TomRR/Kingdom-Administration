@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using KingdomDataLibrary.Data;
+using KingdomDataLibrary.Db;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +26,16 @@ namespace AdministrationRazorPagesApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.AddSingleton(new ConnectionStringData
+            {
+                SqlConnectionName = "Default"
+            });
+
+            services.AddSingleton<IDataAccess, SqlDb>();
+            services.AddSingleton<ICitizenData, CitizenData>();
+            services.AddSingleton<ITribeData, TribeData>();
+            services.AddSingleton<IWeaponData, WeaponData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
