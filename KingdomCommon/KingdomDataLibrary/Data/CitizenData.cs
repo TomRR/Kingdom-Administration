@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace KingdomDataLibrary.Data
 {
-    class CitizenData : ICitizenData
+    public class CitizenData : ICitizenData
     {
         private readonly IDataAccess _dataAccess;
         private readonly ConnectionStringData _connectionString;

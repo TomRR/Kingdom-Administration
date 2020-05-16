@@ -6,7 +6,7 @@ using System.Text;
 
 namespace KingdomDataLibrary.Models
 {
-    class CitizenModel
+    public class CitizenModel
     {
         public int Id { get; set; }
         [Required]

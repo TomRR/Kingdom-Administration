@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace KingdomDataLibrary.Data
 {
-    interface ITribeData
+    public interface ITribeData
     {
         Task<int> CreateTribe(TribeModel tribe);
         Task<int> DeleteTribe(int tribeId);

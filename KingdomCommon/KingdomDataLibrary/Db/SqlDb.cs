@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace KingdomDataLibrary.Db
 {
-    class SqlDb : IDataAccess
+    public class SqlDb : IDataAccess
     {
         private readonly IConfiguration _config;
 

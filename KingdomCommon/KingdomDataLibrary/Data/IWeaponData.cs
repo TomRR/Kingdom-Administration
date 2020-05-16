@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace KingdomDataLibrary.Data
 {
-    interface IWeaponData
+    public interface IWeaponData
     {
         Task<int> CreateWeapon(WeaponModel weapon);
         Task<int> DeleteWeapon(int weaponId);
