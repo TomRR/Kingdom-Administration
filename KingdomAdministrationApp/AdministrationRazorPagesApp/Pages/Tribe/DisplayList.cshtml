@@ -13,17 +13,25 @@
             <th>Exist Since</th>
             <th>Leader</th>
             <th>Leader</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var tribes in Model.Tribes)
+        @foreach (var tribe in Model.Tribes)
         {
-            <tr>
-                <td>@tribes.Name</td>
-                <td>@tribes.ExistSince</td>
-                <td>@tribes.LeaderId</td>
-                <td>@Model.LeaderName</td>
-            </tr>
+        <tr>
+            <td>@tribe.Name</td>
+            <td>@tribe.ExistSince</td>
+            <td>@tribe.LeaderId</td>
+            <td>@Model.LeaderName</td>
+            <td>
+                <a asp-page="./DisplayById" asp-route-id="@tribe.Id" class="btn btn-dark">Update</a>
+            </td>
+            <td>
+                <a asp-page="./Delete" asp-route-id="@tribe.Id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

@@ -12,6 +12,8 @@
             <th>Type</th>
             <th>Magical Value</th>
             <th>Owner</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +23,12 @@
                 <td>@weapon.Typ</td>
                 <td>@weapon.MagicalValue</td>
                 <td>@weapon.CitizenId</td>
+                <td>
+                    <a asp-page="./DisplayById" asp-route-id="@weapon.Id" class="btn btn-dark">Update</a>
+                </td>                
+                <td>
+                    <a asp-page="./Delete" asp-route-id="@weapon.Id" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
         }
     </tbody>

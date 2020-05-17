@@ -4,5 +4,47 @@
     ViewData["Title"] = "DisplayById";
 }
 
-<h1>DisplayById</h1>
+<h1>Weapon</h1>
 
+@if (Model.Weapon is null)
+{
+    <h2>The requested record was not found.</h2>
+}
+else
+{
+    <table class="table">
+        <tbody>
+            <tr>
+                <td class="font-weight-bold">Type</td>
+                <td>@Model.Weapon.Typ</td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold">Magical Value</td>
+                <td>@Model.Weapon.MagicalValue</td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold">Owner</td>
+                <td>@Model.Weapon.CitizenId</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a asp-page="./Delete" asp-route-id="@Model.Weapon.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="UpdateModel.Id" value="@Model.Weapon.Id" type="hidden" />
+        <div class="form-group">
+            <label asp-for="UpdateModel.MagicalValue" class="control-label"></label>
+            <input asp-for="UpdateModel.MagicalValue" value="@Model.Weapon.MagicalValue" class="form-control" />
+            <span asp-validation-for="UpdateModel.MagicalValue" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Update" class="btn btn-primary" />
+        </div>
+    </form>
+}
