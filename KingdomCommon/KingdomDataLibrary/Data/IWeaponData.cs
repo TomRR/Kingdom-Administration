@@ -10,6 +10,6 @@ namespace KingdomDataLibrary.Data
         Task<int> DeleteWeapon(int weaponId);
         Task<List<WeaponModel>> GetWeapon();
         Task<WeaponModel> GetWeaponById(int weaponId);
-        Task<int> UpdateWeaponName(int weaponId, int magicalValue);
+        Task<int> UpdateMagicalValue(int weaponId, int magicalValue);
     }
 }

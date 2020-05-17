@@ -1,0 +1,37 @@
+﻿@page
+@model AdministrationRazorPagesApp.Pages.Tribe.DisplayListModel
+@{
+    ViewData["Title"] = "DisplayList";
+}
+
+<h1>Tribes</h1>
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Exist Since</th>
+            <th>Leader</th>
+            <th>Leader</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tribe in Model.Tribes)
+        {
+        <tr>
+            <td>@tribe.Name</td>
+            <td>@tribe.ExistSince</td>
+            <td>@tribe.LeaderId</td>
+            <td>@Model.LeaderName</td>
+            <td>
+                <a asp-page="./DisplayById" asp-route-id="@tribe.Id" class="btn btn-dark">Update</a>
+            </td>
+            <td>
+                <a asp-page="./Delete" asp-route-id="@tribe.Id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
