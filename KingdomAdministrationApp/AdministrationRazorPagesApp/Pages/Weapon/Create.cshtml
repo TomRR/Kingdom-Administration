@@ -1,0 +1,34 @@
+﻿@page
+@model AdministrationRazorPagesApp.Pages.Weapon.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Weapon</h1>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Weapon.Typ" class="control-lable"></label>
+        <input asp-for="Weapon.Typ" class="form-control" />
+        <span asp-validation-for="Weapon.Typ" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Weapon.MagicalValue" class="control-lable"></label>
+        <input asp-for="Weapon.MagicalValue" class="form-control" />
+        <span asp-validation-for="Weapon.MagicalValue" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Weapon.CitizenId" class="control-lable"></label>
+        <select asp-for="Weapon.CitizenId" asp-items="Model.CitizenList" class="form-control"></select>
+        <span asp-validation-for="Weapon.CitizenId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Save Weapon" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

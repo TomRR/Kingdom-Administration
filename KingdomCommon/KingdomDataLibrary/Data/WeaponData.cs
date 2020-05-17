@@ -40,7 +40,7 @@ namespace KingdomDataLibrary.Data
             return p.Get<int>("Id");
         }
 
-        public Task<int> UpdateWeaponName(int weaponId, int magicalValue)
+        public Task<int> UpdateMagicalValue(int weaponId, int magicalValue)
         {
             return _dataAccess.SaveData("dbo.spWeapon_UpdateMagicalValue",
                                         new
