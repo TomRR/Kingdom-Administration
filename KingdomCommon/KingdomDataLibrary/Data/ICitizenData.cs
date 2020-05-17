@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace KingdomDataLibrary.Data
 {
-    interface ICitizenData
+    public interface ICitizenData
     {
         Task<List<CitizenModel>> GetCitizen();
         Task<int> CreateCitizen(CitizenModel citizen);

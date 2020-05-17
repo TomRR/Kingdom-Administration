@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace KingdomDataLibrary.Data
 {
-    class CitizenData : ICitizenData
+    public class CitizenData : ICitizenData
     {
         private readonly IDataAccess _dataAccess;
         private readonly ConnectionStringData _connectionString;
@@ -31,7 +31,7 @@ namespace KingdomDataLibrary.Data
         public async Task<int> CreateCitizen(CitizenModel citizen)
         {
             DynamicParameters p = new DynamicParameters();
-            p.Add("CitizenName", citizen.Name);
+            p.Add("Name", citizen.Name);
             p.Add("Age", citizen.Age);
             p.Add("HairLength", citizen.HairLength);
             p.Add("LeaderSince", citizen.LeaderSince);

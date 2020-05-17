@@ -6,7 +6,7 @@ using System.Text;
 
 namespace KingdomDataLibrary.Models
 {
-    class CitizenModel
+    public class CitizenModel
     {
         public int Id { get; set; }
         [Required]
@@ -20,8 +20,8 @@ namespace KingdomDataLibrary.Models
         [DisplayName("Is Leader Since")]
         public int LeaderSince { get; set; }
         public double Tax { get; set; }
-        [DisplayName("Tribe Id")]
-        [Range(1, int.MaxValue, ErrorMessage = "You need to select a meal from the lsit")]
+        [DisplayName("Tribe")]
+        [Range(1, int.MaxValue, ErrorMessage = "You need to select a tribe from the list")]
         public int TribeId { get; set; }
     }
 }
