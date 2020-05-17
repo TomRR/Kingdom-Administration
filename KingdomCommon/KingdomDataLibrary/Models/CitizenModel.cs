@@ -21,7 +21,7 @@ namespace KingdomDataLibrary.Models
         public int LeaderSince { get; set; }
         public double Tax { get; set; }
         [DisplayName("Tribe")]
-        [Range(1, int.MaxValue, ErrorMessage = "You need to select a meal from the lsit")]
+        [Range(1, int.MaxValue, ErrorMessage = "You need to select a tribe from the list")]
         public int TribeId { get; set; }
     }
 }

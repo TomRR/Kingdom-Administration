@@ -1,0 +1,62 @@
+﻿@page
+@model AdministrationRazorPagesApp.Pages.Citizen.DisplayByIdModel
+@{
+    ViewData["Title"] = "DisplayById";
+}
+
+<h1>DisplayById</h1>
+
+@if (Model.Citizen is null)
+{
+    <h2>The requested record was not found.</h2>
+}
+else
+{
+    <table class="table">
+        <tbody>
+            <tr>
+                <td class="font-weight-bold">Name</td>
+                <td>@Model.Citizen.Name</td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold">Age</td>
+                <td>@Model.Citizen.Age</td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold">HairLength</td>
+                <td>@Model.Citizen.HairLength</td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold">LeaderSince</td>
+                <td>@Model.Citizen.LeaderSince</td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold">Tribe</td>
+                <td>@Model.TribeName</td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold">Tax to Pay</td>
+                <td>@Model.Citizen.Tax)</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                        <a asp-page="./Delete" asp-route-id="@Model.Citizen.Id" class="btn btn-danger">Delete Citizen</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="UpdateModel.Id" value="@Model.Citizen.Id" type="hidden" />
+        <div class="form-group">
+            <label asp-for="UpdateModel.Name" class="control-label"></label>
+            <input asp-for="UpdateModel.Name" value="@Model.Citizen.Name" class="form-control" />
+            <span asp-validation-for="UpdateModel.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Update Order Name" class="btn btn-primary" />
+        </div>
+    </form>
+}

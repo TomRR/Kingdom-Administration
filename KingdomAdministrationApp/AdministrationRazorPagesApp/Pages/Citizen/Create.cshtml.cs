@@ -14,6 +14,7 @@ namespace AdministrationRazorPagesApp.Pages.Citizen
     {
         private readonly ICitizenData _citizenData;
         private readonly ITribeData _tribeData;
+        private readonly IWeaponData _weaponData;
 
         public List<SelectListItem> TribeList { get; set; }
 
@@ -36,6 +37,29 @@ namespace AdministrationRazorPagesApp.Pages.Citizen
             {
                 TribeList.Add(new SelectListItem { Value = x.Id.ToString(), Text = x.Name });
             });
+        }
+
+        public async Task<IActionResult> OnPost()
+        {
+            if (ModelState.IsValid == false)
+            {
+                return Page();
+            }
+
+            //Tax spaeter errechnen lassen - moeglich machen waffe zu erstellen wahren und rasse auswaehlen
+            //var weapon = await _weaponData.GetWeapon();
+            //if (Citizen.Race == "Dwarf")
+            //{
+            //    Citizen.Tax = Tax.TaxRat * weapon.Where(x => x.CitizenId == Citizen.Id).First().MagicalValue;
+            //}
+            //if (Citizen.Race == "Elb")
+            //{
+            //    Citizen.Tax = Citizen.HairLength * Tax.TaxRate;
+            //}
+            int id = await _citizenData.CreateCitizen(Citizen);
+
+            return RedirectToPage("./DisplayById", new { Id = id });
+            
         }
     }
 }

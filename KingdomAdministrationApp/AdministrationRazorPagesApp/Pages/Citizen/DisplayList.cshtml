@@ -1,0 +1,33 @@
+﻿@page
+@model AdministrationRazorPagesApp.Pages.Citizen.DisplayListModel
+@{
+    ViewData["Title"] = "DisplayList";
+}
+
+<h1>DisplayList</h1>
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>HairLenght</th>
+            <th>LeaderSince</th>
+            <th>TribeId</th>
+            <th>Tax</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var citizen in Model.Citizens)
+        {
+            <tr>
+                <td>@citizen.Name</td>
+                <td>@citizen.Age</td>
+                <td>@citizen.HairLength</td>
+                <td>@citizen.LeaderSince</td>
+                <td>@citizen.TribeId</td>
+                <td>@citizen.Tax</td>
+            </tr>
+        }
+    </tbody>
+</table>
