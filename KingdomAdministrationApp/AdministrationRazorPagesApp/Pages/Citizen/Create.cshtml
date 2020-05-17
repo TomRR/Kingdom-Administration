@@ -1,0 +1,45 @@
+﻿@page
+@model AdministrationRazorPagesApp.Pages.Citizen.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Citizen.Name" class="control-lable"></label>
+        <input asp-for="Citizen.Name" class="form-control" />
+        <span asp-validation-for="Citizen.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Citizen.Age" class="control-lable"></label>
+        <input asp-for="Citizen.Age" class="form-control" />
+        <span asp-validation-for="Citizen.Age" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Citizen.HairLength" class="control-lable"></label>
+        <input asp-for="Citizen.HairLength" class="form-control" />
+        <span asp-validation-for="Citizen.HairLength" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Citizen.LeaderSince" class="control-lable"></label>
+        <input asp-for="Citizen.LeaderSince" class="form-control" />
+        <span asp-validation-for="Citizen.LeaderSince" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Citizen.TribeId" class="control-lable"></label>
+        <section asp-for="Citizen.TribeId" asp-items=Model.TribeList class="form-control"></section>
+        <span asp-validation-for="Citizen.TribeId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Citizen.Tax" class="control-lable"></label>
+        <input asp-for="Citizen.Tax" class="form-control" />
+        <span asp-validation-for="Citizen.Tax" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Save Citizen" class="btn btn-primary" />
+    </div>
+</form>

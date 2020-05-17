@@ -20,7 +20,7 @@ namespace KingdomDataLibrary.Models
         [DisplayName("Is Leader Since")]
         public int LeaderSince { get; set; }
         public double Tax { get; set; }
-        [DisplayName("Tribe Id")]
+        [DisplayName("Tribe")]
         [Range(1, int.MaxValue, ErrorMessage = "You need to select a meal from the lsit")]
         public int TribeId { get; set; }
     }

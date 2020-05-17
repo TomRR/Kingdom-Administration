@@ -4,4 +4,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\KingdomCommon\KingdomDataLibrary\KingdomDataLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="KingdomDataLibrary">
+      <HintPath>KingdomDataLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

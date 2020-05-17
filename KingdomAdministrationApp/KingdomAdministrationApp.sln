@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdministrationRazorPagesApp", "AdministrationRazorPagesApp\AdministrationRazorPagesApp.csproj", "{EFD8221B-D98F-491C-B23B-A63030A1A82C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdministrationRazorPagesApp", "AdministrationRazorPagesApp\AdministrationRazorPagesApp.csproj", "{EFD8221B-D98F-491C-B23B-A63030A1A82C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KingdomDataLibrary", "..\KingdomCommon\KingdomDataLibrary\KingdomDataLibrary.csproj", "{A32FE48C-376F-45E8-B764-F7D196DA54D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EFD8221B-D98F-491C-B23B-A63030A1A82C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFD8221B-D98F-491C-B23B-A63030A1A82C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFD8221B-D98F-491C-B23B-A63030A1A82C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A32FE48C-376F-45E8-B764-F7D196DA54D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A32FE48C-376F-45E8-B764-F7D196DA54D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A32FE48C-376F-45E8-B764-F7D196DA54D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A32FE48C-376F-45E8-B764-F7D196DA54D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

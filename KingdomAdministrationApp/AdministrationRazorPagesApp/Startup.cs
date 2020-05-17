@@ -31,7 +31,7 @@ namespace AdministrationRazorPagesApp
             {
                 SqlConnectionName = "Default"
             });
-
+            
             services.AddSingleton<IDataAccess, SqlDb>();
             services.AddSingleton<ICitizenData, CitizenData>();
             services.AddSingleton<ITribeData, TribeData>();
