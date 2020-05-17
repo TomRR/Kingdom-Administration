@@ -8,22 +8,22 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace AdministrationRazorPagesApp.Pages.Weapon
+namespace AdministrationRazorPagesApp.Pages.Tribe
 {
     public class CreateModel : PageModel
     {
         private readonly ICitizenData _citizenData;
-        private readonly IWeaponData _weaponData;
+        private readonly ITribeData _tribeData;
 
         public List<SelectListItem> CitizenList { get; set; }
 
         [BindProperty]
-        public WeaponModel Weapon { get; set; }
+        public TribeModel Tribe { get; set; }
 
-        public CreateModel(ICitizenData citizenData, IWeaponData weaponData)
+        public CreateModel(ICitizenData citizenData, ITribeData tribeData)
         {
             _citizenData = citizenData;
-            _weaponData = weaponData;
+            _tribeData = tribeData;
         }
 
         public async Task OnGet()
@@ -45,7 +45,7 @@ namespace AdministrationRazorPagesApp.Pages.Weapon
                 return Page();
             }
 
-            int id = await _weaponData.CreateWeapon(Weapon);
+            int id = await _tribeData.CreateTribe(Tribe);
 
             return RedirectToPage("./DisplayById", new { Id = id });
 

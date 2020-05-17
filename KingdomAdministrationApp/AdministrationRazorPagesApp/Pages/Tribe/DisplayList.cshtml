@@ -1,0 +1,29 @@
+﻿@page
+@model AdministrationRazorPagesApp.Pages.Tribe.DisplayListModel
+@{
+    ViewData["Title"] = "DisplayList";
+}
+
+<h1>Tribes</h1>
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Exist Since</th>
+            <th>Leader</th>
+            <th>Leader</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tribes in Model.Tribes)
+        {
+            <tr>
+                <td>@tribes.Name</td>
+                <td>@tribes.ExistSince</td>
+                <td>@tribes.LeaderId</td>
+                <td>@Model.LeaderName</td>
+            </tr>
+        }
+    </tbody>
+</table>

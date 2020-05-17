@@ -1,0 +1,34 @@
+﻿@page
+@model AdministrationRazorPagesApp.Pages.Tribe.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Tribe</h1>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Tribe.Name" class="control-lable"></label>
+        <input asp-for="Tribe.Name" class="form-control" />
+        <span asp-validation-for="Tribe.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Tribe.ExistSince" class="control-lable"></label>
+        <input asp-for="Tribe.ExistSince" class="form-control" />
+        <span asp-validation-for="Tribe.ExistSince" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Tribe.LeaderId" class="control-lable"></label>
+        <select asp-for="Tribe.LeaderId" asp-items="Model.CitizenList" class="form-control"></select>
+        <span asp-validation-for="Tribe.LeaderId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Save Tribe" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
