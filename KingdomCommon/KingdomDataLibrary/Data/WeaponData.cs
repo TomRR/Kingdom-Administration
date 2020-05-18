@@ -33,6 +33,7 @@ namespace KingdomDataLibrary.Data
             DynamicParameters p = new DynamicParameters();
             p.Add("Typ", weapon.Typ);
             p.Add("MagicalValue", weapon.MagicalValue);
+            p.Add("CitizenId", weapon.CitizenId);
             p.Add("Id", DbType.Int32, direction: ParameterDirection.Output);
 
             await _dataAccess.SaveData("dbo.spWeapon_Insert", p, _connectionString.SqlConnectionName);

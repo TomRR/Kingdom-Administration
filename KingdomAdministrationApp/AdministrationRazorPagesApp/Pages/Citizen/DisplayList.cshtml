@@ -15,19 +15,27 @@
             <th>LeaderSince</th>
             <th>Tribe</th>
             <th>Tax</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var citizen in Model.Citizens)
         {
-            <tr>
-                <td>@citizen.Name</td>
-                <td>@citizen.Age</td>
-                <td>@citizen.HairLength</td>
-                <td>@citizen.LeaderSince</td>
-                <td>@citizen.TribeId</td>
-                <td>@citizen.Tax</td>
-            </tr>
+        <tr>
+            <td>@citizen.Name</td>
+            <td>@citizen.Age</td>
+            <td>@citizen.HairLength</td>
+            <td>@citizen.LeaderSince</td>
+            <td>@citizen.TribeId</td>
+            <td>@citizen.Tax</td>
+            <td>
+                <a asp-page="./DisplayById" asp-route-id="@citizen.Id" class="btn btn-dark">Update</a>
+            </td>
+            <td>
+                <a asp-page="./Delete" asp-route-id="@citizen.Id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
